@@ -35,24 +35,20 @@
         ];
         
         function cekBuku() {
-            // Mendapatkan nilai dari textfield dan select option
             let jumlah = document.getElementById("jumlah").value;
             let pilihanBuku = document.getElementById("buku").value;
             
-            // Cek apakah textfield kosong
             if (jumlah === "") {
                 alert("Jumlah buku tidak boleh kosong!");
                 return false;
             }
             
-            // Cari buku yang dipilih dalam array
             let bukuDitemukan = false;
             for (let i = 0; i < buku.length; i++) {
                 if (buku[i].nama === pilihanBuku) {
                     bukuDitemukan = true;
                     let stokBuku = buku[i].jumlah;
                     
-                    // Cek apakah jumlah yang diinputkan lebih banyak dari stok
                     if (jumlah > stokBuku) {
                         alert("Jumlah buku yang Anda cari tidak tersedia");
                         return false;
@@ -63,7 +59,6 @@
                 }
             }
             
-            // Jika buku tidak ditemukan
             if (!bukuDitemukan) {
                 alert("Buku yang Anda pilih tidak ditemukan!");
                 return false;
